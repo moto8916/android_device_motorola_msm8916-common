@@ -15,7 +15,26 @@
  */
 
 /* TODO: Actually provide implementations for these function! */
+#include <media/stagefright/MediaCodec.h>
+#include <media/stagefright/foundation/AMessage.h>
+
+namespace android {
+
+extern "C" {
 
 void _ZN7android8AMessageC1Eji() {}
-void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPi() {}
+
+sp<MediaCodec> _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPi(
+    const sp<ALooper> &looper, const char *mime, bool encoder, status_t *err, pid_t pid);
+
+sp<MediaCodec> _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPi(
+    const sp<ALooper> &looper, const char *mime, bool encoder, status_t *err, pid_t pid) {
+         return _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPi(
+                 looper, mime, encoder, err, pid);
+}
+
 void _ZN7android11AudioSourceC1E14audio_source_tjj() {}
+
+  
+}
+};
