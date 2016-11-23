@@ -25,8 +25,11 @@ use.voice.path.for.pcm.voip=true
 
 # Bluetooth
 bluetooth.hfp.client=1
-ro.bluetooth.dun=true
+qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.6
+ro.qualcomm.bt.hci_transport=smd
+
+ro.bluetooth.dun=true
 ro.bluetooth.sap=true
 ro.qualcomm.bluetooth.ftp=true
 ro.qualcomm.bluetooth.hfp=true
@@ -35,10 +38,11 @@ ro.qualcomm.bluetooth.map=true
 ro.qualcomm.bluetooth.nap=true
 ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
-ro.qualcomm.bt.hci_transport=smd
 
 # Camera
 camera2.portability.force_api=1
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Display
 ro.opengles.version=196608
@@ -86,6 +90,9 @@ rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
+
+# Storage
+ro.sys.sdcardfs=true
 
 # USB
 ro.usb.mtp=0x2e82

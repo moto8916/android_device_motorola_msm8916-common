@@ -101,6 +101,12 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Firmware Extraction
+ifeq ($(filter surnia,$(TARGET_DEVICE)),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/extract_firmware.sh:install/bin/extract_firmware.sh
+endif
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -164,17 +170,12 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
-
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # Wifi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd_default.conf \
     hostapd \
     wpa_supplicant \
