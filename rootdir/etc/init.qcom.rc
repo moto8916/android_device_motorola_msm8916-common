@@ -396,6 +396,7 @@ service rmt_storage /system/bin/rmt_storage
     user root
     group system wakelock
     disabled
+    shutdown critical
 
 on property:ro.boot.emmc=true
     start rmt_storage
