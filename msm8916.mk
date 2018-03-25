@@ -207,6 +207,10 @@ PRODUCT_PACKAGES += \
     stml0xx_wrapper.sh \
     ueventd.rc
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service-qti
+
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
