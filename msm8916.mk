@@ -211,7 +211,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libqsap_shim \
     librmnetctl \
-    libshim_ril \
     libxml2
 
 # Telephony
