@@ -145,12 +145,12 @@ on boot
     write /sys/class/kgsl/kgsl-3d0/wake_timeout 250
 
     # File flags for prebuilt ril db file
-    write /data/misc/radio/prebuilt_db_support 1
-    chown radio radio /data/misc/radio/prebuilt_db_support
-    chmod 0400 /data/misc/radio/prebuilt_db_support
-    write /data/misc/radio/db_check_done 0
-    chown radio radio /data/misc/radio/db_check_done
-    chmod 0660 /data/misc/radio/db_check_done
+    write /data/vendor/radio/prebuilt_db_support 1
+    chown radio radio /data/vendor/radio/prebuilt_db_support
+    chmod 0400 /data/vendor/radio/prebuilt_db_support
+    write /data/vendor/radio/db_check_done 0
+    chown radio radio /data/vendor/radio/db_check_done
+    chmod 0660 /data/vendor/radio/db_check_done
 
     start rmt_storage
 
@@ -283,8 +283,11 @@ on post-fs-data
     mkdir /data/misc/cutback 0770 radio wifi
 
     #create netmgr log dir
-    mkdir /data/misc/netmgr 0770 radio radio
-    chmod 0770 /data/misc/netmgr
+    mkdir /data/vendor/netmgr 0770 radio radio
+    chmod 0770 /data/vendor/netmgr
+
+    #Create directory for radio
+    mkdir /data/vendor/radio 0770 system radio
 
     # Permissions for Factory Test of Charging Paths
     chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_auto_enable
@@ -386,12 +389,12 @@ service time_daemon /system/bin/time_daemon
    user root
    group root
 
-service irsc_util /system/bin/irsc_util "/vendor/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -409,12 +412,12 @@ on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
+service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps nfc oem_2950
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet oem_2950
@@ -497,6 +500,18 @@ service per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system
+
+service vendor.per_proxy /system/vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
 
 service ppd /vendor/bin/mm-pp-daemon
     class hal
