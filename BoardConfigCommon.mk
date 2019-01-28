@@ -138,6 +138,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so \
     /system/vendor/lib/lib-imsvt.so|libshims_ims.so
 
+TARGET_LD_PRELOAD := \
+   /system/lib/libboringssl-compat.so
+
 # Vendor Interface Manifest
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 
