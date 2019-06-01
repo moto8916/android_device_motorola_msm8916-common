@@ -107,20 +107,24 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 
 # IMS
--framework/imscmlibrary.jar
--vendor/app/ims/ims.apk|66fa3ab695d7be55a334cbee6e9c94d60089ac2a
--vendor/app/imssettings/imssettings.apk|63c44e1961546bd90f1675da696f194ae8f8506d
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
-etc/permissions/imscm.xml
-etc/permissions/ims.xml
-etc/permissions/qti_permissions.xml
+-vendor/framework/imscmlibrary.jar
+-priv-app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
+-vendor/framework/com.qualcomm.qti.imscmservice@1.0-java.jar
+-vendor/framework/qti-vzw-ims-internal.jar
+vendor/framework/imscmd.jar
+vendor/framework/rcsimssettings.jar
+vendor/bin/imsdatadaemon
+vendor/bin/imsqmidaemon
+vendor/bin/ims_rtp_daemon
+vendor/etc/permissions/qti_permissions.xml
+vendor/etc/permissions/qti-vzw-ims-internal.xml
+vendor/etc/permissions/qti_libpermissions.xml
 vendor/lib/lib-imscamera.so
 vendor/lib/libimscamera_jni.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/libimsmedia_jni.so
+vendor/lib/lib-dplmedia.so
 vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsrcs.so
 vendor/lib/lib-imsrcscm.so
@@ -138,9 +142,13 @@ vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
+vendor/lib/lib-siputility.so
+vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
+vendor/lib/vendor.qti.imsrtpservice@1.0.so
+vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 
 # Qualcomm framework
-bin/irsc_util
+vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libDiagService.so
 vendor/lib/libdsi_netctrl.so
@@ -162,28 +170,32 @@ vendor/lib/libsmemlog.so
 
 # Radio
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-bin/netmgrd
-bin/qmuxd
-bin/radish
-bin/rmt_storage
-bin/qmi_motext_hook
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
+-app/QtiTelephonyService/QtiTelephonyService.apk
+-framework/qti-telephony-common.jar
+-vendor/framework/qcrilhook.jar
 -framework/qcnvitems.jar
--framework/qcrilhook.jar
-lib/libadropbox.so
-lib/libmdmcutback.so
-lib/libmotext_inf.so
-lib/libqmimotext.so
-vendor/qcril.db
+vendor/framework/QtiTelephonyServicelibrary.jar
+bin/radish
+vendor/bin/netmgrd
+vendor/bin/qmuxd
+vendor/bin/rmt_storage
+vendor/bin/qmi_motext_hook
+vendor/etc/data/dsi_config.xml
+vendor/etc/data/netmgr_config.xml
+vendor/etc/data/qmi_config.xml
+vendor/etc/permissions/qcnvitems.xml
+vendor/etc/permissions/qcrilhook.xml
+vendor/lib/libadropbox.so
+vendor/lib/libmdmcutback.so
+vendor/lib/libmotext_inf.so
+vendor/lib/libqmimotext.so
+vendor/radio/qcril_database/qcril.db
 vendor/lib/libcneapiclient.so
 vendor/lib/libconfigdb.so
 vendor/lib/liblqe.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libnetmgr.so
+vendor/lib/libqcmaputils.so
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qc-radioconfig.so
@@ -195,8 +207,17 @@ vendor/lib/libxml.so
 vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 vendor/lib/libvoice-svc.so
+vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 
 # Peripheral Manager
+vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 
