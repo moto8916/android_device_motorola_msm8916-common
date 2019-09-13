@@ -108,7 +108,7 @@ vendor/lib/libOmxQcelp13Dec.so
 
 # IMS
 -vendor/framework/imscmlibrary.jar
--priv-app/ims/ims.apk
+-vendor/app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
 -vendor/framework/com.qualcomm.qti.imscmservice@1.0-java.jar
 -vendor/framework/qti-vzw-ims-internal.jar
@@ -170,11 +170,8 @@ vendor/lib/libsmemlog.so
 
 # Radio
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
--app/QtiTelephonyService/QtiTelephonyService.apk
--framework/qti-telephony-common.jar
 -vendor/framework/qcrilhook.jar
 -framework/qcnvitems.jar
-vendor/framework/QtiTelephonyServicelibrary.jar
 bin/radish
 vendor/bin/netmgrd
 vendor/bin/qmuxd
