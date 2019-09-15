@@ -2,10 +2,10 @@
 
 start_copying_prebuilt_qcril_db()
 {
-   if [ -f /system/vendor/qcril.db -a ! -f /data/misc/radio/qcril.db ]; then
-      cp /system/vendor/qcril.db /data/misc/radio/qcril.db
-      chown -h radio.radio /data/misc/radio/qcril.db
-   fi
+    if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
+        cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+        chown -h radio.radio /data/vendor/radio/qcril.db
+    fi
 }
 
 # We take this from cpuinfo because hex "letters" are lowercase there
