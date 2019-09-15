@@ -158,7 +158,8 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    telephony-ext
+    telephony-ext \
+    libshims_cne
 
 # HIDL
 PRODUCT_PACKAGES += \
